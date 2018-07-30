@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/search" android:title="http://www.ds-nk.com/" android:icon="@drawable/ic_child_care_black_24dp"/>
-    <item android:id="@+id/db" android:title="nicklogan0988@gmail.com" android:icon="@drawable/ic_bug_report_black_24dp"/>
-    <item android:id="@+id/event" android:title="+38(093)-622-57-64" android:icon="@drawable/ic_business_center_black_24dp"/>
+    <item android:id="@+id/search" android:title="www.ds-nk.com" android:icon="@drawable/ic_laptop_mac_black_24dp" />
+    <item android:id="@+id/db" android:title="nicklogan0988@gmail.com" android:icon="@drawable/email_24dp"/>
+    <item android:id="@+id/event" android:title="+38(093)-622-57-64" android:icon="@drawable/phone_24dp"/>
+
 
 </menu>
