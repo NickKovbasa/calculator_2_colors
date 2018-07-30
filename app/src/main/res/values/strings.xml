@@ -5,4 +5,6 @@
     <string name="username_hint"><font size="12">Username</font></string>
     <string name="password_hint"><font size="12">Password</font></string>
     <string name="login"><font size="15">Log In</font></string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

@@ -8,4 +8,6 @@
     <color name="color_1">#FFFFFF</color>
     <color name="button_background">#20ffffff</color>
     <color name="button_color_numbers">#70ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="darkgray">#6c6c6c</color>
 </resources>

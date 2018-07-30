@@ -2,8 +2,11 @@ package com.example.kolyakb.calculator_2;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.TransitionDrawable;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -12,6 +15,9 @@ import android.widget.TextView;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
 
     AnimationDrawable anim;
     LinearLayout container;
@@ -25,12 +31,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
    static Double result;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
+
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btn_0 = findViewById(R.id.id_0);
         btn_1 = findViewById(R.id.id_1);
@@ -72,12 +84,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_dot.setOnClickListener(this);
         btn_enter.setOnClickListener(this);
 
-
-
         text_1 = findViewById(R.id.id_text_1);
         text_2 = findViewById(R.id.id_text_2);
         text_3 = findViewById(R.id.id_text_3);
-
 
         symbol_1 = "";
         symbol_2 = "";
@@ -85,16 +94,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lastOperation = "";
         result = 0.0;
 
-
         container = findViewById(R.id.container);
 
         anim = (AnimationDrawable) container.getBackground();
         anim.setEnterFadeDuration(6000);
         anim.setExitFadeDuration(2000);
-
     }
 
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (mToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onResume() {
